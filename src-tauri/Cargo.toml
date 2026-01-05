@@ -1,6 +1,6 @@
 [package]
 name = "trilo"
-version = "0.1.0"
+version = "0.1.2"
 description = "A instant translator"
 authors = ["you"]
 edition = "2021"
