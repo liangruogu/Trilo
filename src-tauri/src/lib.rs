@@ -99,7 +99,10 @@ pub fn run() {
             let shortcut = ConfigManager::get_shortcut(app.handle());
             if !shortcut.is_empty() {
                 if let Ok(shortcut_obj) = tauri_plugin_global_shortcut::Shortcut::from_str(&shortcut) {
-                    app.handle().global_shortcut().register(shortcut_obj)?;
+                    if let Err(e) = app.handle().global_shortcut().register(shortcut_obj) {
+                        eprintln!("Failed to register shortcut '{}': {}", shortcut, e);
+                        // 注册失败时不崩溃，允许用户后续手动修改
+                    }
                 }
             }
 
