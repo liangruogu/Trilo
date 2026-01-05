@@ -28,8 +28,9 @@ jobs:
         if: matrix.platform == 'ubuntu-22.04'
         run: |
           sudo apt-get update
-          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf rpm
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf rpm libxdo-dev
           # 'rpm' is required to build .rpm packages
+          # 'libxdo-dev' is required for enigo (keyboard/mouse simulation)
 
       - name: Rust setup
         uses: dtolnay/rust-toolchain@stable
