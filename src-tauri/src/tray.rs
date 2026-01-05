@@ -1,6 +1,7 @@
 use tauri::{
     menu::{Menu, MenuItem},
     tray::{TrayIconBuilder, TrayIconEvent, MouseButton, MouseButtonState},
+    image::Image,
     AppHandle, Manager, Runtime
 };
 
@@ -11,7 +12,7 @@ pub fn create_tray<R: Runtime>(app: &AppHandle<R>) -> tauri::Result<()> {
     let menu = Menu::with_items(app, &[&settings_i, &quit_i])?;
 
     let _tray = TrayIconBuilder::with_id("main-tray")
-        .icon(app.default_window_icon().unwrap().clone())
+        .icon(Image::from_bytes(include_bytes!("../icons/32x32.png")).expect("tray icon"))
         .menu(&menu)
         .show_menu_on_left_click(false) // 只有右键才显示菜单
         .on_menu_event(|app, event| match event.id.as_ref() {
