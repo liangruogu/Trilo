@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trilo - 极简划词翻译工具</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/logo.png">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="assets/logo.png" alt="Trilo Logo">
+                    Trilo
+                </a>
+                <div class="nav-links">
+                    <a href="#config">配置指南</a>
+                    <a href="#faq">常见问题</a>
+                    <a href="#about">关于我们</a>
+                    <a href="https://github.com/liangruogu/trilo" target="_blank">GitHub</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>极简 · 极速 · 极致</h1>
+                <p>Trilo 是一款跨平台的桌面划词翻译工具。无边框设计，毫秒级响应，只在你需要的时候出现。</p>
+                <a href="https://github.com/liangruogu/trilo/releases" class="btn" target="_blank">下载最新版本</a>
+            </div>
+        </section>
+
+        <section id="config">
+            <div class="container">
+                <h2>🔑 配置指南</h2>
+                <p>Trilo 使用<strong>小牛翻译 (Niutrans)</strong> 的高精度翻译引擎。为了正常使用，你需要配置免费的 API Key。</p>
+                
+                <div class="step-card">
+                    <h3>第一步：获取 API Key</h3>
+                    <ol>
+                        <li>访问 <a href="https://niutrans.com/" target="_blank">小牛翻译开放平台</a> 并注册账号。</li>
+                        <li>登录控制台，创建一个新应用（或使用默认应用）。</li>
+                        <li>在应用管理页面，找到你的 <strong>APP ID</strong> 和 <strong>API Key (密匙)</strong>。</li>
+                    </ol>                    <div class="note">
+                        <strong>⚠️ 重要提示：检查免费额度</strong>
+                        <p>新注册账号通常会获赠免费流量包。请登录小牛翻译控制台，检查您的<strong>剩余积分</strong>是否充足。如果额度用尽，API 将无法返回结果。</p>
+                    </div>                
+                </div>
+
+                <div class="step-card">
+                    <h3>第二步：在 Trilo 中配置</h3>
+                    <ol>
+                        <li>在电脑右下角的系统托盘中找到 Trilo 的图标（一个小圆圈）。</li>
+                        <li><strong>右键点击</strong>图标，选择 <strong>“设置”</strong>。</li>
+                        <li>在设置面板中，将获取的 <code>APP ID</code> 和 <code>API Key</code> 填入对应输入框。</li>
+                        <li>点击 <strong>“保存”</strong> 按钮。</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <h2>❓ 常见问题</h2>
+                
+                <details>
+                    <summary>软件是免费的吗？</summary>
+                    <p>是的，Trilo 软件本身是完全免费且开源的。小牛翻译 API 也提供了非常慷慨的免费额度，对于个人日常使用通常是足够的。</p>
+                </details>
+
+                <details>
+                    <summary>为什么双击桌面的快捷方式打不开？</summary>
+                    <p>Trilo需要先选中文本，然后按下快捷键才会有翻译框弹出</p>
+                </details>
+
+                <details>
+                    <summary>支持哪些操作系统？</summary>
+                    <p>Trilo 基于 Tauri 构建，支持 Windows、macOS 和 Linux 全平台。</p>
+                </details>
+
+                <details>
+                    <summary>为什么按快捷键没有反应？</summary>
+                    <p>请检查：1. 软件是否在后台运行（托盘区是否有图标）；2. 快捷键是否与其他软件冲突（尝试在设置中更改快捷键）；3. 是否正确配置了 API Key。</p>
+                </details>
+
+                <details>
+                    <summary>如何开机自启动？</summary>
+                    <p>在设置面板中，打开“开机自启动”开关即可。</p>
+                </details>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>👋 关于我们</h2>
+                <p>Trilo 是由开源社区驱动的项目，旨在提供最纯粹的翻译体验。</p>
+                <p>因为厌倦了慢、臃肿、广告满天飞的翻译软件，所以创造了 Trilo —— 它安静、快速、不打扰。</p>
+                <p>如果你喜欢这个项目，欢迎在 GitHub 上给我们点一个 Star ⭐。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Trilo. Built with <a href="https://tauri.app" target="_blank">Tauri</a> & <a href="https://kit.svelte.dev" target="_blank">SvelteKit</a>.</p>
+        </div>
+    </footer>
+</body>
+</html>
