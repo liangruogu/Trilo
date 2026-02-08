@@ -75,7 +75,9 @@ pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_global_shortcut::Builder::new()
         .with_handler(|app, shortcut, event|{
+            println!("plugin handler triggered");
             if event.state == ShortcutState::Pressed {
+                println!("Triggered");
                 // 获取当前配置的快捷键
                 let configured_shortcut_str = ConfigManager::get_shortcut(app);
                 // 简单判断：如果触发的快捷键与配置的一致（或者我们只注册了一个快捷键），则执行
@@ -104,6 +106,7 @@ pub fn run() {
                         // 注册失败时不崩溃，允许用户后续手动修改
                     }
                 }
+                println!("Shortcut: {shortcut} has been registered")
             }
 
             let window = app.get_webview_window("main").unwrap();

@@ -49,6 +49,7 @@ pub fn handle_translation_flow(handle: AppHandle) {
         let window = handle.get_webview_window("main").unwrap();
         let result = (|| -> Result<String, Box<dyn std::error::Error>> {
             let old_content = crate::read_clipboard().unwrap_or_default();
+            println!("Handle_translation_flow started");
             // 1. 模拟复制按键
             crate::copy_content()?; 
 

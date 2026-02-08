@@ -24,10 +24,11 @@ serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 reqwest = { version = "0.12", features = ["blocking", "json"] }
 md5 = "0.7"
-enigo = "0.2"
+enigo = {version = "0.5", features = ["wayland"] }
 arboard = "3.4"
 tauri-plugin-store = "2.4.1"
 tauri-plugin-autostart = "2.5.1"
+rusqlite = { version = "0.38.0", features = ["bundled"] }
 
 [target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
 tauri-plugin-global-shortcut = "2"

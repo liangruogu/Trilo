@@ -13,3 +13,4 @@ src-tauri/target/
 src-tauri/gen/
 Thumbs.db
 Desktop.ini
+resources
